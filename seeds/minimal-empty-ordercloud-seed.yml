@@ -1,0 +1,415 @@
+Meta:
+  CreatedBySeedingVersion: 1.0.31
+Objects:
+  SecurityProfiles:
+    - ID: BuyerManager
+      Name: Buyer Manager
+      Roles:
+        - BuyerAdmin
+        - BuyerUserAdmin
+        - CatalogAdmin
+        - CategoryAdmin
+        - CategoryReader
+        - UserGroupAdmin
+        - UserGroupReader
+      CustomRoles: []
+      PasswordConfig: null
+    - ID: BuyerUser
+      Name: Buyer User
+      Roles:
+        - MeAddressAdmin
+        - MeAdmin
+        - MeCreditCardAdmin
+        - MeXpAdmin
+        - Shopper
+      CustomRoles: []
+      PasswordConfig: null
+    - ID: ImpersonationBuyer
+      Name: ImpersonationBuyer
+      Roles:
+        - Shopper
+      CustomRoles: []
+      PasswordConfig: null
+    - ID: MeManager
+      Name: Me Manager
+      Roles:
+        - MeAdmin
+        - MeXpAdmin
+      CustomRoles: []
+      PasswordConfig: null
+    - ID: MiddlewareBackofficeUser
+      Name: Middleware Backoffice User
+      Roles:
+        - FullAccess
+      CustomRoles: []
+      PasswordConfig: null
+    - ID: OrderManager
+      Name: Order Manager
+      Roles:
+        - BuyerImpersonation
+        - OrderAdmin
+        - SetSecurityProfile
+        - SupplierAddressReader
+      CustomRoles: []
+      PasswordConfig: null
+    - ID: ProductManager
+      Name: Product Manager
+      Roles:
+        - PriceScheduleAdmin
+        - ProductAdmin
+        - ProductFacetReader
+        - PromotionAdmin
+      CustomRoles: []
+      PasswordConfig: null
+    - ID: ReportViewer
+      Name: Report Viewer
+      Roles:
+        - OrderAdmin
+        - ProductAdmin
+      CustomRoles: []
+      PasswordConfig: null
+    - ID: SettingsManager
+      Name: SettingsManager
+      Roles:
+        - AdminAddressAdmin
+        - AdminUserAdmin
+        - AdminUserGroupAdmin
+        - ProductFacetAdmin
+      CustomRoles: []
+      PasswordConfig: null
+    - ID: ShipmentManager
+      Name: Shipment Manager
+      Roles:
+        - ShipmentAdmin
+      CustomRoles: []
+      PasswordConfig: null
+    - ID: SuperAdmin
+      Name: Super Admin
+      Roles:
+        - FullAccess
+      CustomRoles: []
+      PasswordConfig: null
+    - ID: SupplierManager
+      Name: Supplier Manager
+      Roles:
+        - SupplierAddressAdmin
+        - SupplierAdmin
+        - SupplierUserAdmin
+        - SupplierUserGroupAdmin
+      CustomRoles: []
+      PasswordConfig: null
+  ImpersonationConfigs: []
+  OpenIdConnects: []
+  AdminUsers:
+    - ID: DefaultAdminUser
+      CompanyID: <MarketplaceID placeholder>
+      Username: admin01
+      Password: null
+      FirstName: Default
+      LastName: Admin User
+      Email: admin01@sitecore.demo
+      Phone: 123-456-0789
+      TermsAccepted: '2023-08-10T00:00:00+00:00'
+      Active: true
+      xp:
+        Description: This is the default admin user.
+        ProfilePicture: https://robohash.org/admin
+      AvailableRoles:
+        - BuyerAdmin
+        - BuyerUserAdmin
+        - CatalogAdmin
+        - CategoryAdmin
+        - CategoryReader
+        - FullAccess
+        - UserGroupAdmin
+        - UserGroupReader
+      DateCreated: '2023-08-09T22:01:07.69+00:00'
+      PasswordLastSetDate: '2023-08-10T15:24:21.317+00:00'
+  AdminUserGroups:
+    - ID: BuyerManager
+      Name: Buyer Manager
+      Description: 'Associated with the BuyerManager security profile '
+      xp:
+        IsPermission: true
+    - ID: MeManager
+      Name: Me Manager
+      Description: 'Associated with the MeManager security profile '
+      xp:
+        IsPermission: true
+    - ID: OrderManager
+      Name: Order Manager
+      Description: 'Associated with the OrderManager security profile '
+      xp:
+        IsPermission: true
+    - ID: ProductManager
+      Name: Product Manager
+      Description: 'Associated with the ProductManager security profile '
+      xp:
+        IsPermission: true
+    - ID: ReportViewer
+      Name: Report Viewer
+      Description: 'Associated with the ReportViewer security profile '
+      xp:
+        IsPermission: true
+    - ID: SettingsManager
+      Name: Settings Manager
+      Description: Associated with the SettingsManager security profile
+      xp:
+        IsPermission: true
+    - ID: ShipmentManager
+      Name: Shipment Manager
+      Description: null
+      xp:
+        IsPermission: true
+    - ID: SuperAdmin
+      Name: Super Admin
+      Description: Associated with the Super Admin security profile
+      xp:
+        IsPermission: true
+    - ID: SupplierManager
+      Name: Supplier Manager
+      Description: Associated with the SupplierManager security profile.
+      xp:
+        IsPermission: true
+  AdminAddresses:
+    - ID: DefaultAdminAddress
+      DateCreated: '2023-08-09T22:01:09.377+00:00'
+      CompanyName: Sitecore OrderCloud
+      FirstName: Default
+      LastName: Admin
+      Street1: 101 California St
+      Street2: Floor 16
+      City: San Francisco
+      State: CA
+      Zip: '94111'
+      Country: US
+      Phone: null
+      AddressName: Default Admin Address
+      xp: null
+  MessageSenders:
+    - ID: BuyerEmails
+      Name: Buyer Emails
+      MessageTypes:
+        - ForgottenPassword
+        - NewUserInvitation
+        - OrderApproved
+        - OrderDeclined
+        - OrderSubmittedForApproval
+      Description: null
+      URL: https://localhost:5001/messagesenders/{messagetype}
+      ElevatedRoles: null
+      SharedKey: <Redacted. Leave unchanged.>
+      xp: {}
+    - ID: SellerEmails
+      Name: Seller Emails
+      MessageTypes:
+        - ForgottenPassword
+      Description: null
+      URL: https://localhost:5001/messagesenders/{messagetype}
+      ElevatedRoles: null
+      SharedKey: <Redacted. Leave unchanged.>
+      xp: {}
+    - ID: SupplierEmails
+      Name: Supplier Emails
+      MessageTypes:
+        - ForgottenPassword
+      Description: null
+      URL: https://localhost:5001/messagesenders/{messagetype}
+      ElevatedRoles: null
+      SharedKey: <Redacted. Leave unchanged.>
+      xp: {}
+  ApiClients:
+    - ID: ef27b826-dfa7-4032-8148-66db5e505987
+      ClientSecret: null
+      AccessTokenDuration: 600
+      Active: true
+      AppName: Default Client App
+      RefreshTokenDuration: 43200
+      DefaultContextUserName: admin01
+      xp: {}
+      AllowAnyBuyer: false
+      AllowAnySupplier: true
+      AllowSeller: true
+      IsAnonBuyer: false
+      AssignedBuyerCount: 0
+      AssignedSupplierCount: 0
+      OrderCheckoutIntegrationEventID: null
+      OrderCheckoutIntegrationEventName: null
+      OrderReturnIntegrationEventID: null
+      OrderReturnIntegrationEventName: null
+      AddToCartIntegrationEventID: null
+      AddToCartIntegrationEventName: null
+      MinimumRequiredRoles: []
+      MinimumRequiredCustomRoles: []
+      MaximumGrantedRoles: []
+      MaximumGrantedCustomRoles: []
+  Locales: []
+  Incrementors:
+    - ID: 0001-LocationIncrementor
+      Name: Location Incrementor
+      LastNumber: 0
+      LeftPaddingCount: 4
+    - ID: 0001-UserIncrementor
+      Name: User Incrementor
+      LastNumber: 0
+      LeftPaddingCount: 5
+    - ID: buyerIncrementor
+      Name: Buyer Incrementor
+      LastNumber: 1
+      LeftPaddingCount: 4
+    - ID: orderIncrementor
+      Name: Order Incrementor
+      LastNumber: 0
+      LeftPaddingCount: 6
+    - ID: sellerLocationIncrementor
+      Name: Seller Location Incrementor
+      LastNumber: 0
+      LeftPaddingCount: 4
+    - ID: supplierIncrementor
+      Name: Supplier Incrementor
+      LastNumber: 0
+      LeftPaddingCount: 3
+  Webhooks: []
+  IntegrationEvents: []
+  XpIndices:
+    - ThingType: Company
+      Key: BuyersServicing
+    - ThingType: Company
+      Key: CountriesServicing
+    - ThingType: Company
+      Key: Data.ServiceCategory
+    - ThingType: Company
+      Key: Data.VendorLevel
+    - ThingType: Company
+      Key: SyncFreightPop
+    - ThingType: Order
+      Key: IsResubmitting
+    - ThingType: Order
+      Key: LocationID
+    - ThingType: Order
+      Key: NeedsAttention
+    - ThingType: Order
+      Key: OrderType
+    - ThingType: Order
+      Key: QuoteStatus
+    - ThingType: Order
+      Key: QuoteSupplierID
+    - ThingType: Order
+      Key: StopShipSync
+    - ThingType: Order
+      Key: SubmittedOrderStatus
+    - ThingType: Order
+      Key: SupplierIDs
+    - ThingType: Promotion
+      Key: AppliesTo
+    - ThingType: Promotion
+      Key: Automatic
+    - ThingType: User
+      Key: RequestInfoEmails
+    - ThingType: User
+      Key: UserGroupID
+    - ThingType: UserGroup
+      Key: CatalogAssignments
+    - ThingType: UserGroup
+      Key: Country
+    - ThingType: UserGroup
+      Key: Role
+    - ThingType: UserGroup
+      Key: Type
+  Buyers:
+    - ID: DemoBuyer
+      Name: Demo Buyer
+      DefaultCatalogID: DemoCatalog
+      Active: true
+      DateCreated: '2023-08-10T17:25:36.557+00:00'
+      xp:
+        Description: This Buyer is created as a demo example.
+  Users: []
+  UserGroups: []
+  Addresses: []
+  CostCenters: []
+  CreditCards: []
+  SpendingAccounts: []
+  ApprovalRules: []
+  Catalogs:
+    - ID: DemoCatalog
+      OwnerID: <MarketplaceID placeholder>
+      Name: Demo Catalog
+      Description: Default catalog for Demo Buyer
+      Active: true
+      CategoryCount: 0
+      xp: null
+  Categories: []
+  Suppliers:
+    - ID: DemoSupplier
+      Name: Demo Supplier
+      Active: true
+      DateCreated: '2023-08-09T22:01:10.593+00:00'
+      AllBuyersCanOrder: true
+      xp: null
+  SupplierUsers:
+    - ID: J82Co10COUmJV9YtjUW_-w
+      CompanyID: DemoSupplier
+      Username: supplier01
+      Password: null
+      FirstName: Default
+      LastName: Supplier User 01
+      Email: mohk@sitecore.demo
+      Phone: '123456789'
+      TermsAccepted: null
+      Active: true
+      xp: ''
+      AvailableRoles: []
+      DateCreated: '2023-08-09T22:01:11.7+00:00'
+      PasswordLastSetDate: null
+      SupplierID: DemoSupplier
+  SupplierUserGroups: []
+  SupplierAddresses: []
+  Products: []
+  PriceSchedules: []
+  Specs: []
+  ProductFacets: []
+  Promotions: []
+  SellerApprovalRules: []
+Assignments:
+  UserGroupAssignments: []
+  SpendingAccountAssignments: []
+  AddressAssignments: []
+  CostCenterAssignments: []
+  CreditCardAssignments: []
+  CategoryAssignments: []
+  CategoryProductAssignments: []
+  SupplierUserGroupsAssignments: []
+  SupplierBuyerAssignments: []
+  SecurityProfileAssignments:
+    - SecurityProfileID: BuyerManager
+      BuyerID: null
+      SupplierID: null
+      UserID: null
+      UserGroupID: BuyerManager
+    - SecurityProfileID: MeManager
+      BuyerID: null
+      SupplierID: null
+      UserID: null
+      UserGroupID: MeManager
+    - SecurityProfileID: SuperAdmin
+      BuyerID: null
+      SupplierID: null
+      UserID: null
+      UserGroupID: SuperAdmin
+  AdminUserGroupAssignments:
+    - UserGroupID: BuyerManager
+      UserID: DefaultAdminUser
+    - UserGroupID: SuperAdmin
+      UserID: DefaultAdminUser
+  ApiClientAssignments: []
+  LocaleAssignments: []
+  ProductAssignments: []
+  CatalogAssignments:
+    - CatalogID: DemoCatalog
+      BuyerID: DemoBuyer
+      ViewAllCategories: true
+      ViewAllProducts: true
+  ProductCatalogAssignment: []
+  SpecProductAssignments: []
+  PromotionAssignments: []
